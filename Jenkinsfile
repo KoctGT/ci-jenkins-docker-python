@@ -5,12 +5,11 @@ pipeline {
     }
     stages {
         stage('Docker Build Custom') {
-    	    agent any
-              steps {
-                // Download the code
-                checkout scm
-              	sh 'docker build -t kozlovk/pythonext:latest .'
-              }
+          steps {
+            // Download the code
+             checkout scm
+             sh 'docker build -t kozlovk/pythonext:latest .'
+           }
         }
 //        stage('Docker Push') {
 //            steps {
