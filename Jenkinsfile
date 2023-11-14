@@ -22,7 +22,7 @@ pipeline {
         stage('Build and Test') {
             agent { 
                 docker { 
-                    image $DOCKER_IMAGE_NAME
+                    image %DOCKER_IMAGE_NAME%
                     reuseNode true
                 } 
             }
