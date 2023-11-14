@@ -17,12 +17,13 @@ pipeline {
 //                withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
 //        	    sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
 //                sh 'docker push kozlovk/pythonext:latest'
+//            }
 //        }
                 
         stage('Build and Test') {
             agent { 
                 docker { 
-                    image %DOCKER_IMAGE_NAME%
+                    image "${DOCKER_IMAGE_NAME}"
                     reuseNode true
                 } 
             }
