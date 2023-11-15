@@ -1,1 +1,1 @@
-requests >= 2.21.0
+pylint >= 3.0.2
