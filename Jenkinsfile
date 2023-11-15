@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Docker Build Custom pylint') {
           steps {
-             sh 'docker build -t kozlovk/pylint:latest .'
+             sh 'docker buildx build -t kozlovk/pylint:latest .'
            }
         }
 //        stage('Docker Push') {
