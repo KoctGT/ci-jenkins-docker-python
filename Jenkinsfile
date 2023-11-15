@@ -1,7 +1,7 @@
 pipeline {
     agent { label "agent01" }
      environment {
-        DOCKER_IMAGE_NAME = "python:3"
+        DOCKER_IMAGE_NAME = "kozlovk/pylint:latest"
     }
     stages {
         stage('Checkout') {
