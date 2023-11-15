@@ -75,6 +75,7 @@ pipeline {
             agent { 
                 docker { 
                     image "${DOCKER_IMAGE_NAME}"
+                    args "-p 8000:8000"
                     reuseNode true
                 } 
             }
