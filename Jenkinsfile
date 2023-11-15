@@ -94,7 +94,7 @@ pipeline {
                //    --extra-vars "environment=#{params.DEPLOY_ENV} version=#{params.DEPLOY_VER}" \
                //    deploy_#{params.DEPLOY_APP}.yml
                //  """
-                 sh 'websrv.py'
+                 sh 'python websrv.py'
                 }
         }
     }
