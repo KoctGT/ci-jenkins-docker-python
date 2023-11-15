@@ -16,7 +16,7 @@ class HttpGetHandler(BaseHTTPRequestHandler):
 
 class MyServer(threading.Thread):
     def run(self):
-        self.server = ThreadingHTTPServer(('localhost', 8000), HttpGetHandler)
+        self.server = ThreadingHTTPServer(('', 8000), HttpGetHandler)
         self.server.serve_forever()
     def stop(self):
         self.server.shutdown()        
@@ -27,6 +27,6 @@ if __name__ == "__main__":
     s = MyServer()
     s.start()
     print('thread alive:', s.is_alive())  # True
-    time.sleep(10)
+    time.sleep(15)
     s.stop()
     print('thread alive:', s.is_alive())  # False
