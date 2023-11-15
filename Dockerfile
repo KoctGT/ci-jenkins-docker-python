@@ -6,5 +6,5 @@ COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
-CMD [ "python", "./custom_script.py" ]
+EXPOSE 8000 8000
+# CMD [ "python", "./websrv.py" ]
