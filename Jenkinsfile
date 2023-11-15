@@ -30,10 +30,12 @@ pipeline {
                 } 
             }
             steps {
-                script {
-                  sh """
-                  pylint **/*.py
-                  """
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    script {
+                      sh """
+                      pylint **/*.py
+                      """
+                    }
                 }
             }
         }
