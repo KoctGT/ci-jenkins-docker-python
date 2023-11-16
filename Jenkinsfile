@@ -95,7 +95,7 @@ pipeline {
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh 'docker run --restart on-failure --name kkpylint -p 8000:8000 -d kozlovk/pylint:latest'
+                        sh 'docker run --restart on-failure --name kkpylint -p 8000:8000 -d kozlovk/pylint:latest python websrv.py'
                     }
                 }
         }
