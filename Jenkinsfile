@@ -4,12 +4,13 @@ pipeline {
         DOCKER_IMAGE_NAME = "kozlovk/pylint:latest"
     }
     stages {
-        stage('Checkout') {
-          steps {
-            // Download the code
-             checkout scm
-           }
-        }
+//        stage('Checkout') {
+//        This stage execute in Jenkins automatic as Declarative: Checkout SCM
+//          steps {
+//            // Download the code
+//             checkout scm
+//           }
+//        }
         stage('Docker Build Custom pylint') {
           steps {
              sh 'docker build -t kozlovk/pylint:latest .'
