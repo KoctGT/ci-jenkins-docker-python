@@ -90,12 +90,12 @@ pipeline {
                //  """
                  script {
                         try {
-                            sh "docker stop kkpylint\"
-                            sh "docker rm kkpylint\"
+                            sh 'docker stop kkpylint'
+                            sh 'docker rm kkpylint'
                         } catch (err) {
                             echo: 'caught error: $err'
                         }
-                        sh "docker run --restart on-failure --name kkpylint -p 8000:8000 -d kozlovk/pylint:latest\"
+                        sh 'docker run --restart on-failure --name kkpylint -p 8000:8000 -d kozlovk/pylint:latest'
                     }
                 }
         }
